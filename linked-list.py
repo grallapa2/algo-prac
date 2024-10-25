@@ -29,15 +29,35 @@ class SinglyLinkedList(object):
         if pos == 1:
         # add at the beginning
             new_node = Node(val)
-            if head == None
-                
-
-        else if pos == 2:
+            if self.head == None:
+                self.head = new_node
+            else:
+                temp = self.head
+                head = new_node
+                head.next = temp
+        elif pos == 2:
         # add at the end
-        else if pos == 3:
-            for count, ele in
+            current = self.head
+            new_node = Node(val)
+            while current.next != None
+                current = current.next
+            current.next = new_node
+        elif pos == 3:
+            picked_position = input("Enter position number:")
+            current_pos = 1
+            current = self.head
+            while picked_position != current_pos:
+                current = current.next
+            temp = current.next
+            new_node = Node(val)
+            current.next = new_node
+            new_node.next = temp
         else:
-
+            print("Enter a valid number")
 
     def print_nodes(self):
-
+        current = self.head
+        while current.next != None
+            temp = current
+            print (temp.data)
+            current = current.next
