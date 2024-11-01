@@ -28,7 +28,8 @@ class SinglyLinkedList(object):
         val = input("Enter a value you want to insert")
         if pos == 1:
         # add at the beginning
-            new_node = Node(val)
+            new_node = Node()
+            new_node.data = val
             if self.head == None:
                 self.head = new_node
             else:
@@ -38,7 +39,8 @@ class SinglyLinkedList(object):
         elif pos == 2:
         # add at the end
             current = self.head
-            new_node = Node(val)
+            new_node = Node()
+            new_node.data = val
             while current.next != None
                 current = current.next
             current.next = new_node
@@ -49,7 +51,8 @@ class SinglyLinkedList(object):
             while picked_position != current_pos:
                 current = current.next
             temp = current.next
-            new_node = Node(val)
+            new_node = Node()
+            new_node.data = val
             current.next = new_node
             new_node.next = temp
         else:
