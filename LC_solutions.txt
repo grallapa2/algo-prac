@@ -1,4 +1,20 @@
+#1768. Merge Strings Alternately
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        len1 = len(word1)
+        len2 = len(word2)
+        merged = ""
 
+        if len1 > len2:
+            for i in range(len2):
+                merged = merged + word1[i] + word2[i]
+            merged = merged + word1[len2:]
+        else:
+            for i in range(len1):
+                merged = merged + word1[i] + word2[i]
+            merged = merged + word2[len1:]
+        
+        return merged  
 
 #1431. Kids With the Greatest Number of Candies - working solution
 class Solution:
