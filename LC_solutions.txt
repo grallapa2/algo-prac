@@ -1,18 +1,18 @@
-#1431. Kids With the Greatest Number of Candies
+
+
+#1431. Kids With the Greatest Number of Candies - working solution
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         maxi = 0
         
-        for i in range(len(candies)-1):
-            if candies[i] > candies[i+1]:
+        for i in range(len(candies)):
+            if candies[i] > maxi:
                 maxi = candies[i]
-            else: 
-                maxi = candies[i+1]
 
         returnlist = []
 
-        for i in range(len(candies)-1):
-            if candies[i] + extraCandies > maxi:
+        for i in range(len(candies)):
+            if candies[i] + extraCandies >= maxi:
                 returnlist.append(True)
             else:
                 returnlist.append(False)
