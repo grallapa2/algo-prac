@@ -1,3 +1,23 @@
+#151. Reverse Words in a String
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        words_list = []
+        word = ''
+        for i in range(len(s)):
+            if s[i] == ' ':
+                if word.strip() != "":
+                    words_list.append(word.strip())
+                word = ''
+            else:
+                word += s[i]
+
+            if i == len(s)-1 and word.strip() != "":
+                    words_list.append(word.strip())
+
+        words_list.reverse()
+        final_word = ' '.join(words_list)
+        return final_word
+
 #1768. Merge Strings Alternately
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
