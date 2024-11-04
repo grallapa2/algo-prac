@@ -1,3 +1,25 @@
+#1071. Greatest Common Divisor of Strings
+class Solution:
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        i = len(str1)
+        j = len(str2)
+
+        if i > j
+            for x in range(i):
+                if str1[]
+
+        def isDivisor(value, divisor):
+            y = 0
+            divisor_length = len(divisor)
+            for x in range(len(value)):
+                if value[x] == divisor[y]:
+                    y += 1
+                    if y == divisor_length -1
+                        y = 0
+                else:
+                    return False
+            return True
+
 #345. Reverse Vowels of a String
 class Solution:
     def reverseVowels(self, s: str) -> str:
