@@ -1,4 +1,18 @@
-#1071. Greatest Common Divisor of Strings
+#238. Product of Array Except Self
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        output = []
+
+        for i in range(len(nums)):
+            mul = 1
+            for j in range(len(nums)):
+                if i != j:
+                    mul = mul * nums[j]
+
+            output.append(mul)
+
+        return output
+#1071. Greatest Common Divisor of Strings - incomplete
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
         i = len(str1)
