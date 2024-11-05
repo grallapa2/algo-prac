@@ -1,4 +1,21 @@
-#238. Product of Array Except Self
+#238. Product of Array Except Self - incomplete - approach#2
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        output = []
+        j=0
+        mul = 1
+        for i in range(len(nums)):
+            mul = mul * nums[i]
+        for i in range(len(nums)):
+            if i == j:
+                if nums[i] == 0:
+                    output.append(0)
+                else:
+                    output.append(mul // nums[i])
+            j += 1
+
+        return output
+#238. Product of Array Except Self - incomplete
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         output = []
