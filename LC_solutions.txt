@@ -1,3 +1,16 @@
+#334. Increasing Triplet Subsequence - approach 1, not working
+class Solution:
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        n = len(nums)
+        count = 0
+        if n < 3:
+            return False
+        for i in range(n-2):
+            if nums[i] < nums [i + 1] and nums[i + 1] < nums [i + 2]:
+                return True
+
+        return False
+
 #238. Product of Array Except Self - incomplete - approach 3, from youtube
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
