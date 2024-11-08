@@ -1,3 +1,36 @@
+334. Increasing Triplet Subsequence - can do better job
+class Solution:
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        n = len(nums)-1
+        m = len(nums)
+        if m < 3:
+            return False
+
+        if m == 3:
+            if nums[0] < nums[1] and nums[1] < nums[2]:
+                return True
+            else:
+                return False
+
+        left_min = [0] * m
+        right_max = [0] * m
+        left_min[0] = nums[0]
+        right_max[m-1] = nums[m-1]
+        for i in range(1,n+1):
+            if nums[i] < left_min[i-1]:
+                left_min[i] = nums[i]
+            else:
+                left_min[i] = left_min[i-1]
+        for i in range(n-1, 0, -1):
+            if nums[i] > right_max[i+1]:
+                right_max[i] = nums[i]
+            else:
+                right_max[i] = right_max[i+1]
+        for i in range(n):
+            if left_min[i] < nums[i] and nums[i] < right_max[i]:
+                return True
+        return False
+
 #334. Increasing Triplet Subsequence - approach 1, not working
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
