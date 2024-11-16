@@ -1,4 +1,21 @@
-392. Is Subsequence, take 1 working solution
+# 11. Container With Most Water, got help from neetcode
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        l = 0
+        r = len(height) - 1
+        area = 0
+        res = 0
+        while l < r:
+            area = (r - l) * min(height[l], height[r])
+            res = max(res, area)
+            if height[l] < height[r]:
+                l += 1
+            else:
+                r -= 1
+
+        return res
+
+# 392. Is Subsequence, take 1 working solution
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
         j = 0
@@ -18,7 +35,7 @@ class Solution:
         else:
             return False
 
-283. Move Zeroes #take 2, working solution
+# 283. Move Zeroes - take 2, working solution
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         if len(nums) == 1:
@@ -29,7 +46,7 @@ class Solution:
                 nums[i], nums[j] = nums[j], nums[i]
                 j+=1
 
-283. Move Zeroes #take 1
+#283. Move Zeroes - take 1
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         if len(nums) == 1:
@@ -41,7 +58,7 @@ class Solution:
                     nums[j] = nums[j+1]
                     nums[j+1] = temp
 
-334. Increasing Triplet Subsequence - can do better job
+#334. Increasing Triplet Subsequence - can do better job
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
         n = len(nums)-1
