@@ -1,3 +1,27 @@
+# 1679. Max Number of K-Sum Pairs
+class Solution:
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        if len(nums) == 0:
+            return 0
+        l = 0
+        r = len(nums)-1
+        max = 0
+        counted = False
+        for i in range(len(nums)):
+            l = i
+            r = len(nums)-1
+            counted = False
+            while l < r:
+                if nums[l] + nums[r] == k:
+                    counted = True
+                    nums.pop(r)
+                r-=1
+            if counted == True:
+                max += 1
+        return max
+
+
+
 # 11. Container With Most Water, got help from neetcode
 class Solution:
     def maxArea(self, height: List[int]) -> int:
