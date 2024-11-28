@@ -1,3 +1,25 @@
+#643. Maximum Average Subarray I
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        count = len(nums)
+        total = 0
+        max_total = 0
+        if count < k:
+            return sum(nums)/count
+        else:
+            total = sum(nums[:k])
+            max_total = sum(nums[:k])
+            i = 0
+            j = k
+            while(j<=count - 1):
+                total += nums[j]
+                total -= nums[i]
+                i = i + 1
+                j = j + 1
+                max_total = max(max_total, total)
+            return max_total/k
+
+
 # 1679. Max Number of K-Sum Pairs
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
